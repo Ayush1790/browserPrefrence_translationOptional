@@ -1,0 +1,22 @@
+<?php include_once APP_PATH.'/assets/header.php';?>
+<table class="table table-bordered table-striped" >
+    <caption>table showing details of the products</caption>
+    <thead>
+        <tr>
+            <th><?php echo $this->locale->_('id'); ?></th>
+            <th><?php echo $this->locale->_('product-name'); ?></th>
+            <th><?php echo $this->locale->_('description'); ?></th>
+            <th><?php echo $this->locale->_('tags'); ?></th>
+            <th><?php echo $this->locale->_('price'); ?></th>
+            <th><?php echo $this->locale->_('stock'); ?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+        foreach ($data as $key => $value) {
+            echo "<tr><td>$value[id]</td><td>$value[name]</td><td>$value[desc]</td><td>$value[tags]</td>
+            <td>$value[price]</td><td>$value[stock]</td></tr>";
+        }
+        ?>
+    </tbody>
+</table>
