@@ -11,7 +11,6 @@ use Phalcon\Acl\Adapter\Memory;
 use Phalcon\Security\JWT\Signer\Hmac;
 use Phalcon\Security\JWT\Token\Parser;
 use Phalcon\Security\JWT\Validator;
-// include_once APP_PATH.'/assets/header.php';
 class Listener extends Injectable
 {
     public function beforeAddProduct()
@@ -148,17 +147,17 @@ class Listener extends Injectable
                     echo  $this->locale->_(
                         'Access Denied'
                     );
-                    // die;
+                    die;
                 }
             } catch (Exception $e) {
                 echo $e->getMessage();
-                // die;
+                die;
             }
         } else {
             echo $this->locale->_(
                 'token not received'
             );
-            // die;
+            die;
         }
         
     }
