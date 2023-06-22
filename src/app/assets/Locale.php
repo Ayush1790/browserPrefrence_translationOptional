@@ -6,8 +6,7 @@ use Phalcon\Di\Injectable;
 use Phalcon\Translate\Adapter\NativeArray;
 use Phalcon\Translate\InterpolatorFactory;
 use Phalcon\Translate\TranslateFactory;
-use Phalcon\Cache\Adapter\Stream;
-use Phalcon\Storage\SerializerFactory;
+
 session_start();
 class Locale extends Injectable
 {

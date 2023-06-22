@@ -66,7 +66,7 @@ class Listener extends Injectable
 
     public function beforeHandleRequest(Event $event, Application $app, Dispatcher $dis)
     {
-        $language=$app->request->get('loacle');
+        $language=($_SERVER['HTTP_ACCEPT_LANGUAGE']);
         $_SESSION['language']=$language;
         $aclFile = APP_PATH.'/security/acl.cache';
         if (true !== is_file($aclFile)) {
