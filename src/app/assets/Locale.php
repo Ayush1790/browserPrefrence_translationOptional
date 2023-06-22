@@ -8,7 +8,7 @@ use Phalcon\Translate\InterpolatorFactory;
 use Phalcon\Translate\TranslateFactory;
 use Phalcon\Cache\Adapter\Stream;
 use Phalcon\Storage\SerializerFactory;
-
+session_start();
 class Locale extends Injectable
 {
     /**
@@ -17,7 +17,7 @@ class Locale extends Injectable
     public function getTranslator(): NativeArray
     {
         // Ask browser what is the best language
-        $language = $this->request->get('locale');
+        $language = $_SESSION['language'];
         if (!isset($language)) {
             $language = 'en_US';
         }
